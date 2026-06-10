@@ -1,3 +1,4 @@
+import 'package:bestvaluemotors/utils/appColors.dart';
 import 'package:bestvaluemotors/views/homeScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -16,6 +17,12 @@ class MyApp extends StatelessWidget {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Sizer',
+          theme: ThemeData(
+            brightness: Brightness.dark,
+            scaffoldBackgroundColor: AppColors.bgColor,
+            canvasColor: AppColors.bgColor,
+            fontFamily: 'Poppins',
+          ),
           home: HomeScreen() ,
         );
       },
