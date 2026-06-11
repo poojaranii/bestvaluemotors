@@ -12,31 +12,31 @@ Widget homeAppBarView() {
         imageSourceType: ImageSourceType.asset,
         imageUrl: ImageUrls.imageBaseUrl + ImageUrls.appLogoUrl,
         width: 28.w,
-        height: 28.w,
+        // height: 28.w,
         fit: BoxFit.cover,
       ),
       Row(
         children: [
           CircleAvatar(
             backgroundColor: AppColors.orangeColor,
-            radius: 21,
+            radius: 16,
             child: CircleAvatar(
               backgroundColor: AppColors.bgColor,
-              radius: 20,
-              child: Icon(Icons.add, color: AppColors.orangeColor, size: 22),
+              radius: 15,
+              child: Icon(Icons.add, color: AppColors.orangeColor, size: 18),
             ),
           ),
           SizedBox(width: 2.w),
           CircleAvatar(
             backgroundColor: AppColors.dividerColor,
-            radius: 21,
+            radius: 16,
             child: CircleAvatar(
               backgroundColor: AppColors.bgColor,
-              radius: 20,
+              radius: 15,
               child: Icon(
                 Icons.star_border_rounded,
                 color: AppColors.whiteColor,
-                size: 22,
+                size: 18,
               ),
             ),
           ),
@@ -46,14 +46,14 @@ Widget homeAppBarView() {
             children: [
               CircleAvatar(
                 backgroundColor: AppColors.dividerColor,
-                radius: 21,
+                radius: 16,
                 child: CircleAvatar(
                   backgroundColor: AppColors.bgColor,
-                  radius: 20,
+                  radius: 15,
                   child: Icon(
                     Icons.notifications_none_sharp,
                     color: AppColors.whiteColor,
-                    size: 22,
+                    size: 18,
                   ),
                 ),
               ),
@@ -76,14 +76,14 @@ Widget homeAppBarView() {
           SizedBox(width: 2.w),
           CircleAvatar(
             backgroundColor: AppColors.dividerColor,
-            radius: 21,
+            radius: 16,
             child: CircleAvatar(
               backgroundColor: AppColors.bgColor,
-              radius: 20,
+              radius: 15,
               child: Icon(
                 Icons.person_2_outlined,
                 color: AppColors.whiteColor,
-                size: 22,
+                size: 18,
               ),
             ),
           ),
