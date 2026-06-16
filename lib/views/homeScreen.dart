@@ -38,13 +38,13 @@ class _HomeScreenState extends State<HomeScreen> {
             homeAppBarView(),
             SizedBox(height: 2.h),
             searchBarView(),
-            SizedBox(height: 2.h),
+            SizedBox(height: 1.5.h),
             commonView(AppStrings.browse,Icons.dashboard_outlined),
             SizedBox(height: 1.h),
             commonView(AppStrings.myBlock,Icons.directions_car_outlined),
             SizedBox(height: 1.h),
             commonView(AppStrings.myMarketGuide,Icons.auto_graph_sharp),
-            SizedBox(height: 2.h),
+            SizedBox(height: 1.5.h),
            cardView(),
             SizedBox(height: 2.h),
             Row(
@@ -56,7 +56,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             SizedBox(height: 1.h),
             SizedBox(
-              height: 35.h,
+              height: 20.h,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 3,
@@ -227,7 +227,7 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget vehicleCard() {
     return Container(
       width: 40.w,
-      margin: const EdgeInsets.only(right: 4),
+      margin: const EdgeInsets.only(right: 10),
       decoration: BoxDecoration(
         color: AppColors.cardBgColor,
         borderRadius: BorderRadius.circular(12),

@@ -1,5 +1,6 @@
 import 'package:bestvaluemotors/utils/appColors.dart';
 import 'package:bestvaluemotors/views/homeScreen.dart';
+import 'package:bestvaluemotors/views/myWatchListScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:sizer/sizer.dart';
@@ -16,14 +17,15 @@ class MyApp extends StatelessWidget {
       builder: (context, orientation, deviceType) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Sizer',
+          title: 'Best Auction',
           theme: ThemeData(
             brightness: Brightness.dark,
             scaffoldBackgroundColor: AppColors.bgColor,
             canvasColor: AppColors.bgColor,
             fontFamily: 'Poppins',
           ),
-          home: HomeScreen() ,
+          home: MyWatchListScreen() ,
+          // home: HomeScreen() ,
         );
       },
     );
