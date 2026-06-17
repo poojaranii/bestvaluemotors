@@ -46,7 +46,7 @@ class _HomeScreenState extends State<HomeScreen> {
             commonView(AppStrings.myMarketGuide,Icons.auto_graph_sharp),
             SizedBox(height: 1.5.h),
            cardView(),
-            SizedBox(height: 2.h),
+            SizedBox(height: 3.h),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -54,9 +54,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 Text(AppStrings.seeAll,style: TextStyle(fontWeight: FontWeight.w400,fontSize: 12,color: AppColors.orangeColor),),
               ],
             ),
-            SizedBox(height: 1.h),
+            SizedBox(height: 1.8.h),
             SizedBox(
-              height: 20.h,
+              height: 25.h,
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: 3,
@@ -64,7 +64,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   return vehicleCard();
                 },
               ),
-            )
+            ),
+            SizedBox(height: 4.h),
           ],
         ),
       ),
@@ -239,16 +240,12 @@ class _HomeScreenState extends State<HomeScreen> {
         borderRadius: BorderRadius.circular(12),
         child: Stack(
           children: [
-
-            /// Car Image
             Positioned.fill(
               child: Image.asset(
                 ImageUrls.imageBaseUrl + ImageUrls.carUrl,
                 fit: BoxFit.fill,
               ),
             ),
-
-            /// Dark Overlay
             Positioned.fill(
               child: Container(
                 decoration: BoxDecoration(
@@ -264,11 +261,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-
-            /// Price Tag
             Positioned(
-              top: 1.5.h,
-              left: 3.w,
+              top: 1.2.h,
+              left: 2.w,
               child: Container(
                 padding: EdgeInsets.only(left: 2.w, right: 2.w,top: 0.5.h,bottom: 0.5.h),
                 decoration: BoxDecoration(
@@ -286,8 +281,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Positioned(
-              top: 1.5.h,
-              right: 3.w,
+              top: 1.2.h,
+              right: 2.w,
               child: CircleAvatar(
                 radius: 15,
                 backgroundColor: AppColors.bgColor.withOpacity(0.7),
@@ -298,11 +293,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ),
             ),
-
-            /// Bottom Content
             Positioned(
-              left: 3.w,
-              bottom: 1.5.h,
+              left: 2.w,
+              bottom: 1.2.h,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -325,9 +318,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-
                   SizedBox(height: 0.3.h),
-
                   Row(
                     children: [
                       Text(
@@ -337,16 +328,12 @@ class _HomeScreenState extends State<HomeScreen> {
                           fontSize: 10,
                         ),
                       ),
-
                       SizedBox(width: 2.w),
-
                       const CircleAvatar(
                         radius: 3,
                         backgroundColor: AppColors.orangeColor,
                       ),
-
                        SizedBox(width: 2.w),
-
                       Text(
                         "204 L",
                         style: const TextStyle(

@@ -94,5 +94,44 @@ Widget homeAppBarView() {
 }
 
 Widget commonAppBarView() {
-  return Container();
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      Container(
+        width: 9.w,
+        height: 9.w,
+        decoration: BoxDecoration(
+          color: AppColors.bgColor,
+          borderRadius: BorderRadius.circular(4),
+          border: Border.all(
+            color: AppColors.orangeColor,
+            width: 1.2,
+          ),
+        ),
+        alignment: Alignment.center,
+        child:Icon(Icons.arrow_back,color: AppColors.orangeColor,size: 18),
+      ),
+      ImageView(
+        imageSourceType: ImageSourceType.asset,
+        imageUrl: ImageUrls.imageBaseUrl + ImageUrls.appLogoUrl,
+        width: 28.w,
+        // height: 28.w,
+        fit: BoxFit.cover,
+      ),
+      Container(
+        width: 9.w,
+        height: 9.w,
+        decoration: BoxDecoration(
+          color: AppColors.bgColor,
+          borderRadius: BorderRadius.circular(4),
+          border: Border.all(
+            color: AppColors.orangeColor,
+            width: 1.2,
+          ),
+        ),
+        alignment: Alignment.center,
+        child:Icon(Icons.star_border_rounded,color: AppColors.orangeColor,size: 22),
+      ),
+    ],
+  );
 }

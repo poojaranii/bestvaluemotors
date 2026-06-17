@@ -60,6 +60,7 @@ class AppStrings {
   static const String exteriorPhotos = "Exterior Photos";
   static const String undercarriagePhotos = "Undercarriage Photos";
   static const String interiorPhotos = "Interior Photos";
+  static const String interiorColour = "Interior Colour";
   static const String vin = "Vin";
   static const String pleaseNoteNonRunners = "*Please note, non-runners, oversized units, and vehicles with drivability or mechanical issues will be subject to additional charges.**";
   static const String absolutelyNoPickups = "**Absolutely no pickups from store directly";
