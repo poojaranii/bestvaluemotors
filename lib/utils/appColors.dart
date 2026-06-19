@@ -12,4 +12,7 @@ class AppColors {
   static const Color green = Color(0xFF00E676);
   static const Color darkGreen = Color(0xFF2E7D32);
   static const Color yellow = Color(0xFFFFA000);
+  static const Color lightOrange = Color(0xFFE8AA7F);
+  static const Color lightCardBgColor = Color(0xFF252525);
+
 }
