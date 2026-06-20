@@ -103,13 +103,10 @@ Widget commonAppBarView() {
         decoration: BoxDecoration(
           color: AppColors.bgColor,
           borderRadius: BorderRadius.circular(4),
-          border: Border.all(
-            color: AppColors.orangeColor,
-            width: 1.2,
-          ),
+          border: Border.all(color: AppColors.orangeColor, width: 1.2),
         ),
         alignment: Alignment.center,
-        child:Icon(Icons.arrow_back,color: AppColors.orangeColor,size: 18),
+        child: Icon(Icons.arrow_back, color: AppColors.orangeColor, size: 18),
       ),
       ImageView(
         imageSourceType: ImageSourceType.asset,
@@ -124,14 +121,51 @@ Widget commonAppBarView() {
         decoration: BoxDecoration(
           color: AppColors.bgColor,
           borderRadius: BorderRadius.circular(4),
-          border: Border.all(
-            color: AppColors.orangeColor,
-            width: 1.2,
-          ),
+          border: Border.all(color: AppColors.orangeColor, width: 1.2),
         ),
         alignment: Alignment.center,
-        child:Icon(Icons.star_border_rounded,color: AppColors.orangeColor,size: 22),
+        child: Icon(
+          Icons.star_border_rounded,
+          color: AppColors.orangeColor,
+          size: 22,
+        ),
       ),
+    ],
+  );
+}
+
+Widget commonAppBarView1(String title, {bool? iconTrue}) {
+  return Row(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+      Container(
+        width: 9.w,
+        height: 9.w,
+        decoration: BoxDecoration(
+          color: AppColors.bgColor,
+          borderRadius: BorderRadius.circular(4),
+          border: Border.all(color: AppColors.orangeColor, width: 1.2),
+        ),
+        alignment: Alignment.center,
+        child: Icon(Icons.arrow_back, color: AppColors.orangeColor, size: 18),
+      ),
+      Row(
+        children: [
+          Text(
+            title,
+            style: TextStyle(
+              fontWeight: FontWeight.w500,
+              fontSize: 12,
+              color: AppColors.whiteColor,
+            ),
+          ),
+          if(iconTrue??false)
+            SizedBox(width: 2.w),
+          if(iconTrue??false)
+           Icon(Icons.info_outlined,size: 18)
+        ],
+      ),
+      Icon(Icons.eighteen_mp, color: AppColors.bgColor),
     ],
   );
 }

@@ -133,4 +133,52 @@ class AppStrings {
   static const String dummyVehicleDesc1 = "Edge 4dr Titanium AWD";
   static const String dummyVehicle2 = "2015 Ford";
   static const String dummyVehicleDesc2 = "Super Duty F-250 SRW 4WD SuperCab 158\" XLT";
+
+  static const String title = "Paint";
+
+  static const String vehicleRepainted = "Vehicle Repainted";
+  static const String no = "No";
+
+  static const String hoodDepth = "Hood Depth";
+  static const String driverFender = "Driver Fender";
+  static const String driverFrontDoor = "Driver Front Door";
+  static const String driverRearDoor = "Driver Rear Door";
+  static const String driverQuarterPanel = "Driver Quarter Panel";
+  static const String trunk = "Trunk";
+
+  static const String roofDepth = "Roof Depth";
+  static const String passengerFender = "Passenger Fender";
+  static const String passengerFrontDoor = "Passenger Front Door";
+  static const String passengerRearDoor = "Passenger Rear Door";
+  static const String passengerQuarterPanel = "Passenger Quarter Panel";
+
+
+  static const String tpms = "TPMS";
+  static const String aftermarketWheels = "Aftermarket Wheels";
+
+  static const String winterTires = "Winter Tires";
+  static const String studdedWinterTires = "Studded Winter Tires";
+
+  static const String fourMatchingTires = "Four Matching Tires";
+
+  static const String secondSetOfTires = "Second Set Of Tires";
+  static const String withRims = "With Rims";
+
+  static const String driverFrontTireBrand = "Driver Front Tire - Brand";
+  static const String passengerFrontTireBrand = "Passenger Front Tire - Brand";
+  static const String driverRearTireBrand = "Driver Rear Tire - Brand";
+  static const String passengerRearTireBrand = "Passenger Rear Tire - Brand";
+
+  static const String tireSize = "Tire Size";
+  static const String tread = "Tread";
+
+  static const String yes = "Yes";
+  static const String unitsUpcoming = "Units Upcoming";
+  static const String noLiveAuction = "No Live Auctions Running";
+  static const String totalUnitsUpcoming = "Total Units Upcoming";
+
+  static const String tireBrand = "BF Goodrich";
+  static const String frontTireSize = "225 / 65 / 17";
+  static const String frontDriverTread = "9 / 32";
+
 }
