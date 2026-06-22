@@ -9,6 +9,7 @@ import 'package:bestvaluemotors/views/productDetailScreen.dart';
 import 'package:bestvaluemotors/views/productPhotosScreen.dart';
 import 'package:bestvaluemotors/views/purchasedScreen.dart';
 import 'package:bestvaluemotors/views/recentActivityScreen.dart';
+import 'package:bestvaluemotors/views/runListScreen.dart';
 import 'package:bestvaluemotors/views/setAutobidScreen.dart';
 import 'package:bestvaluemotors/views/tiresScreen.dart';
 import 'package:flutter/material.dart';
@@ -45,7 +46,8 @@ class MyApp extends StatelessWidget {
           // home: PaintScreen() ,
           // home: TiresScreen() ,
           // home: LiveAuctionScreen() ,
-          home: PurchasedScreen() ,
+          // home: PurchasedScreen() ,
+          home: RunListScreen() ,
         );
       },
     );
