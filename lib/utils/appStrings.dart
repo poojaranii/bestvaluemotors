@@ -180,5 +180,6 @@ class AppStrings {
   static const String tireBrand = "BF Goodrich";
   static const String frontTireSize = "225 / 65 / 17";
   static const String frontDriverTread = "9 / 32";
+  static const String asIsEasternAuction = "As is Eastern Canada Auction";
 
 }

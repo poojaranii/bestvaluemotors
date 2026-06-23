@@ -1,4 +1,5 @@
 import 'package:bestvaluemotors/utils/appColors.dart';
+import 'package:bestvaluemotors/views/NotificationSettingsScreen.dart';
 import 'package:bestvaluemotors/views/confirmAutobidScreen.dart';
 import 'package:bestvaluemotors/views/homeScreen.dart';
 import 'package:bestvaluemotors/views/liveAuctionScreen.dart';
@@ -7,6 +8,7 @@ import 'package:bestvaluemotors/views/myWatchListScreen.dart';
 import 'package:bestvaluemotors/views/paintScreen.dart';
 import 'package:bestvaluemotors/views/productDetailScreen.dart';
 import 'package:bestvaluemotors/views/productPhotosScreen.dart';
+import 'package:bestvaluemotors/views/purchasedFilterScreen.dart';
 import 'package:bestvaluemotors/views/purchasedScreen.dart';
 import 'package:bestvaluemotors/views/recentActivityScreen.dart';
 import 'package:bestvaluemotors/views/runListScreen.dart';
@@ -46,8 +48,10 @@ class MyApp extends StatelessWidget {
           // home: PaintScreen() ,
           // home: TiresScreen() ,
           // home: LiveAuctionScreen() ,
+          // home: PurchasedFilterScreen() ,
+          home: NotificationSettingsScreen() ,
           // home: PurchasedScreen() ,
-          home: RunListScreen() ,
+          // home: RunListScreen() ,
         );
       },
     );
