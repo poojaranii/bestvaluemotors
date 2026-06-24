@@ -1,7 +1,9 @@
 import 'package:bestvaluemotors/reusableWidgets/imageView.dart';
 import 'package:bestvaluemotors/utils/appColors.dart';
 import 'package:bestvaluemotors/utils/appStrings.dart';
+import 'package:bestvaluemotors/views/productDetailScreen.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:sizer/sizer.dart';
@@ -29,45 +31,61 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
   Widget body(){
-    return SingleChildScrollView(
-      child: Padding(
-        padding: EdgeInsets.only(left: 3.w,right: 3.w),
-        child: Column(
-          children: [
-            SizedBox(height: 1.h),
-            homeAppBarView(),
-            SizedBox(height: 2.h),
-            searchBarView(),
-            SizedBox(height: 1.5.h),
-            commonView(AppStrings.browse,Icons.dashboard_outlined),
-            SizedBox(height: 1.h),
-            commonView(AppStrings.myBlock,Icons.directions_car_outlined),
-            SizedBox(height: 1.h),
-            commonView(AppStrings.myMarketGuide,Icons.auto_graph_sharp),
-            SizedBox(height: 1.5.h),
-           cardView(),
-            SizedBox(height: 3.h),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(AppStrings.recommendedForYou,style: TextStyle(fontWeight: FontWeight.w400,fontSize: 15),),
-                Text(AppStrings.seeAll,style: TextStyle(fontWeight: FontWeight.w400,fontSize: 12,color: AppColors.orangeColor),),
-              ],
-            ),
-            SizedBox(height: 1.8.h),
-            SizedBox(
-              height: 25.h,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: 3,
-                itemBuilder: (context, index) {
-                  return vehicleCard();
-                },
+    return Padding(
+      padding: EdgeInsets.only(left: 3.w,right: 3.w),
+      child: Column(
+        children: [
+          SizedBox(height: 1.h),
+          homeAppBarView(),
+          SizedBox(height: 2.h),
+          searchBarView(),
+          SizedBox(height: 1.5.h),
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisAlignment: .start,
+                crossAxisAlignment: .start,
+                children: [
+                  commonView(AppStrings.browse,Icons.dashboard_outlined),
+                  SizedBox(height: 1.h),
+                  commonView(AppStrings.myBlock,Icons.directions_car_outlined),
+                  SizedBox(height: 1.h),
+                  commonView(AppStrings.myMarketGuide,Icons.auto_graph_sharp),
+                  SizedBox(height: 1.5.h),
+                  cardView(),
+                  SizedBox(height: 2.h),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(AppStrings.recommendedForYou,style: TextStyle(fontWeight: FontWeight.w400,fontSize: 15),),
+                      Text(AppStrings.seeAll,style: TextStyle(fontWeight: FontWeight.w400,fontSize: 12,color: AppColors.orangeColor),),
+                    ],
+                  ),
+                  SizedBox(height: 1.h),
+                  SizedBox(
+                    height: 25.h,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 3,
+                      itemBuilder: (context, index) {
+                        return vehicleCard();
+                      },
+                    ),
+                  ),
+                  SizedBox(height: 2.h),
+                  commonView3(AppStrings.dummyNumber,AppStrings.purchased,Icons.shopping_cart_outlined),
+                  SizedBox(height: 1.h),
+                  commonView3("3",AppStrings.noSale,Icons.sell_outlined),
+                  SizedBox(height: 2.h),
+                  Text(AppStrings.recentActivity,style: TextStyle(fontWeight: FontWeight.w400,fontSize: 15,color: AppColors.whiteColor),),
+                  SizedBox(height: 1.h),
+                  recentActivityView(),
+                  SizedBox(height: 3.h),
+                ],
               ),
             ),
-            SizedBox(height: 4.h),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -89,12 +107,12 @@ class _HomeScreenState extends State<HomeScreen> {
         children: [
           Row(
             children: [
-              Icon(Icons.search_sharp,color: AppColors.orangeColor,),
+              Icon(Icons.search_sharp,color: AppColors.orangeColor,size: 18,),
               SizedBox(width: 3.w),
               Text(AppStrings.searchAll),
             ],
           ),
-          Icon(Icons.photo_camera_outlined,color: AppColors.orangeColor,),
+          Icon(Icons.photo_camera_outlined,color: AppColors.orangeColor,size: 18,),
         ],
       ),
     );
@@ -224,132 +242,367 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
    }
-
-  Widget vehicleCard() {
-    return Container(
-      width: 40.w,
-      margin: const EdgeInsets.only(right: 10),
-      decoration: BoxDecoration(
-        color: AppColors.cardBgColor,
-        borderRadius: BorderRadius.circular(12),
-        border: Border.all(
-          color: AppColors.borderColor,
+   Widget vehicleCard() {
+    return GestureDetector(
+      onTap: (){
+        Get.to(ProductDetailScreen());
+      },
+      child: Container(
+        width: 40.w,
+        margin: const EdgeInsets.only(right: 10),
+        decoration: BoxDecoration(
+          color: AppColors.cardBgColor,
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: AppColors.borderColor,
+          ),
         ),
-      ),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(12),
-        child: Stack(
-          children: [
-            Positioned.fill(
-              child: Image.asset(
-                ImageUrls.imageBaseUrl + ImageUrls.carUrl,
-                fit: BoxFit.fill,
-              ),
-            ),
-            Positioned.fill(
-              child: Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.topCenter,
-                    end: Alignment.bottomCenter,
-                    colors: [
-                      Colors.black.withOpacity(.15),
-                      Colors.black.withOpacity(.35),
-                      Colors.black.withOpacity(.85),
-                    ],
-                  ),
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(12),
+          child: Stack(
+            children: [
+              Positioned.fill(
+                child: Image.asset(
+                  ImageUrls.imageBaseUrl + ImageUrls.carUrl,
+                  fit: BoxFit.fill,
                 ),
               ),
-            ),
-            Positioned(
-              top: 1.2.h,
-              left: 2.w,
-              child: Container(
-                padding: EdgeInsets.only(left: 2.w, right: 2.w,top: 0.5.h,bottom: 0.5.h),
-                decoration: BoxDecoration(
-                    color: AppColors.bgColor.withOpacity(0.7),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Text(
-                  "\$1,200",
-                  style: const TextStyle(
-                    color: AppColors.orangeColor,
-                    fontSize: 12,
-                    fontWeight: FontWeight.w500,
-                  ),
-                ),
-              ),
-            ),
-            Positioned(
-              top: 1.2.h,
-              right: 2.w,
-              child: CircleAvatar(
-                radius: 15,
-                backgroundColor: AppColors.bgColor.withOpacity(0.7),
-                child: Icon(
-                  Icons.favorite_border,
-                  color: AppColors.whiteColor,
-                  size: 17,
-                ),
-              ),
-            ),
-            Positioned(
-              left: 2.w,
-              bottom: 1.2.h,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Text(
-                    "DIGITAL LANE",
-                    style: TextStyle(
-                      color: AppColors.whiteColor,
-                      fontSize: 10,
-                      fontWeight: FontWeight.w400,
+              Positioned.fill(
+                child: Container(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                      colors: [
+                        Colors.black.withOpacity(.15),
+                        Colors.black.withOpacity(.35),
+                        Colors.black.withOpacity(.85),
+                      ],
                     ),
                   ),
-                  SizedBox(height: 0.3.h),
-                  Text(
-                    "L-34567 dtyulhj",
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
+                ),
+              ),
+              Positioned(
+                top: 1.2.h,
+                left: 2.w,
+                child: Container(
+                  padding: EdgeInsets.only(left: 2.w, right: 2.w,top: 0.5.h,bottom: 0.5.h),
+                  decoration: BoxDecoration(
+                      color: AppColors.bgColor.withOpacity(0.7),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Text(
+                    "\$1,200",
                     style: const TextStyle(
-                      color: AppColors.whiteColor,
+                      color: AppColors.orangeColor,
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
-                  SizedBox(height: 0.3.h),
-                  Row(
-                    children: [
-                      Text(
-                        "1234567",
-                        style: const TextStyle(
-                          color: AppColors.greyColor,
-                          fontSize: 10,
-                        ),
-                      ),
-                      SizedBox(width: 2.w),
-                      const CircleAvatar(
-                        radius: 3,
-                        backgroundColor: AppColors.orangeColor,
-                      ),
-                       SizedBox(width: 2.w),
-                      Text(
-                        "204 L",
-                        style: const TextStyle(
-                          color: AppColors.greyColor,
-                          fontSize: 10,
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
+                ),
               ),
-            ),
-          ],
+              Positioned(
+                top: 1.2.h,
+                right: 2.w,
+                child: CircleAvatar(
+                  radius: 15,
+                  backgroundColor: AppColors.bgColor.withOpacity(0.7),
+                  child: Icon(
+                    Icons.favorite_border,
+                    color: AppColors.whiteColor,
+                    size: 17,
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 2.w,
+                bottom: 1.2.h,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "DIGITAL LANE",
+                      style: TextStyle(
+                        color: AppColors.whiteColor,
+                        fontSize: 10,
+                        fontWeight: FontWeight.w400,
+                      ),
+                    ),
+                    SizedBox(height: 0.3.h),
+                    Text(
+                      "L-34567 dtyulhj",
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(
+                        color: AppColors.whiteColor,
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    SizedBox(height: 0.3.h),
+                    Row(
+                      children: [
+                        Text(
+                          "1234567",
+                          style: const TextStyle(
+                            color: AppColors.greyColor,
+                            fontSize: 10,
+                          ),
+                        ),
+                        SizedBox(width: 2.w),
+                        const CircleAvatar(
+                          radius: 3,
+                          backgroundColor: AppColors.orangeColor,
+                        ),
+                         SizedBox(width: 2.w),
+                        Text(
+                          "204 L",
+                          style: const TextStyle(
+                            color: AppColors.greyColor,
+                            fontSize: 10,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
   }
+   Widget commonView3(String title,String description,IconData iconName){
+    return Container(
+      width: 100.w,
+      padding: EdgeInsets.only(left: 3.w,right: 3.w,top: 1.3.h,bottom: 1.3.h),
+      decoration: BoxDecoration(
+        color: AppColors.cardBgColor,
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(
+          color: AppColors.dividerColor,
+          width: 1.2,
+        ),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              Container(
+                padding: EdgeInsets.only(left: 2.w,right: 2.w,top: 1.h,bottom: 1.h),
+                decoration: BoxDecoration(
+                  color: AppColors.cardBgColor,
+                  borderRadius: BorderRadius.circular(8),
+                  gradient:  LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      AppColors.orangeColor.withOpacity(0.20),
+                      AppColors.orangeColor.withOpacity(0.10),
+                      AppColors.orangeColor.withOpacity(0.08),
+                    ],
+                  ),
+                  border: Border.all(
+                    color: AppColors.orangeColor,
+                    width: 0.2,
+                  ),
+                ),
+                child:  Icon(iconName,size: 18,color: AppColors.orangeColor,),
+              ),
+              SizedBox(width: 4.w),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(title,style: TextStyle(fontWeight: FontWeight.w500,fontSize: 15,color: AppColors.whiteColor),),
+                  Text(description,style: TextStyle(fontWeight: FontWeight.w400,fontSize: 12),),
+                ],
+              )
+            ],
+          ),
+          Icon(Icons.arrow_forward_ios_sharp,size: 15,color: AppColors.whiteColor)
+        ],
+      ),
+    );
+  }
+   Widget recentActivityView() {
+    return Column(
+      children: [
+        timelineItem(
+          day: "5",
+          month: "MAY",
+          title: "Purchased",
+          date: "Purchased April 30, 2026",
+          vehicle: "2016 Ford",
+          subtitle: "Edge 4dr Titanium AWD",
+          amount: "\$4,000",
+        ),
 
+        timelineItem(
+          day: "29",
+          month: "APR",
+          title: "Purchased",
+          date: "Purchased April 8, 2026",
+          vehicle: "2015 Ford",
+          subtitle: "Super Duty F-250 SRW",
+          amount: "\$5,000",
+        ),
+
+        timelineItem(
+          day: "27",
+          month: "APR",
+          title: "Purchased",
+          date: "Purchased April 27, 2026",
+          vehicle: "2021 Ram",
+          subtitle: "1500 Classic Outdoorsman",
+          amount: "\$7,500",
+        ),
+      ],
+    );
+  }
+   Widget timelineItem({required String day, required String month, required String title, required String date, required String vehicle, required String subtitle, required String amount,}) {
+    return IntrinsicHeight(
+    child: Row(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        timelineDate(day, month),
+        SizedBox(width: 4.w),
+        Expanded(
+          child: Container(
+            margin: EdgeInsets.only(bottom: 2.h),
+            padding: EdgeInsets.only(left: 3.w,right: 3.w),
+            decoration: BoxDecoration(
+              color: AppColors.cardBgColor,
+              borderRadius: BorderRadius.circular(16),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Row(
+                  children: [
+                    Expanded(
+                      child: Text(
+                        title,
+                        style: TextStyle(
+                          color: AppColors.whiteColor,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                        ),
+                      ),
+                    ),
+
+                    Text(
+                      amount,
+                      style: TextStyle(
+                        color: AppColors.green,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(height: .2.h),
+                Text(
+                  date,
+                  style: TextStyle(
+                    color: AppColors.greyColor,
+                    fontSize: 12,
+                  ),
+                ),
+                SizedBox(height: 2.h),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: SizedBox(
+                        width: 16.w,
+                        height: 16.w,
+                        child: Image.asset(
+                          ImageUrls.imageBaseUrl + ImageUrls.carUrl,
+                          fit: BoxFit.fill,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 3.w),
+                    Expanded(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Divider(color: AppColors.dividerColor,),
+                          Text(
+                            vehicle,
+                            style: TextStyle(
+                              color: AppColors.whiteColor,
+                              fontSize: 15,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                          Text(
+                            subtitle,
+                            style: TextStyle(
+                              color: AppColors.greyColor,
+                              fontSize: 12,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ],
+    ),
+  );}
+   Widget timelineDate(String day, String month) {
+    return Column(
+      children: [
+        Container(
+          width: 14.w,
+          height: 14.w,
+          decoration: BoxDecoration(
+            shape: BoxShape.circle,
+            border: Border.all(
+              color: AppColors.orangeColor,
+              width: 0.2.w,
+            ),
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                day,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              Text(
+                month,
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 10,
+                ),
+              ),
+            ],
+          ),
+        ),
+
+        Container(
+          width: 0.2.w,
+          height: 14.h,
+          color:AppColors.orangeColor,
+        ),
+      ],
+    );
+  }
 }

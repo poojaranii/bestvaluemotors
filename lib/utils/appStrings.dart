@@ -119,7 +119,7 @@ class AppStrings {
   static const String noSale = "NO SALE";
   static const String purchasedCount = "145";
   static const String noSaleCount = "3";
-  static const String recentActivity = "RECENT ACTIVITY";
+  static const String recentActivity = "Recent Activity";
   static const String may5 = "5";
   static const String apr29 = "29";
   static const String apr27 = "27";

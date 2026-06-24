@@ -1,6 +1,8 @@
 import 'package:bestvaluemotors/utils/appStrings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:sizer/sizer.dart';
 
 import '../utils/appColors.dart';
@@ -22,7 +24,7 @@ class _MyWatchListScreenState extends State<MyWatchListScreen> {
           style: TextStyle(fontWeight: FontWeight.w500, fontSize: 15),),
           backgroundColor: AppColors.bgColor,
           leading: Padding(
-            padding: const EdgeInsets.all(8),
+            padding: EdgeInsets.all(8),
             child: Container(
               decoration: BoxDecoration(
                 color: AppColors.bgColor,
@@ -34,7 +36,9 @@ class _MyWatchListScreenState extends State<MyWatchListScreen> {
               ),
               child: IconButton(
                 icon: Icon(Icons.arrow_back,color: AppColors.orangeColor,size: 18),
-                onPressed: () {},
+                onPressed: () {
+                  Get.back();
+                },
               ),
             ),
           ),
@@ -71,7 +75,7 @@ class _MyWatchListScreenState extends State<MyWatchListScreen> {
     return Container(
       width: 100.w,
       padding: EdgeInsets.only(left: 3.w,right: 3.w,top: 2.h,bottom: 2.h),
-      margin: EdgeInsets.only(left: 4.w,right: 4.w),
+      margin: EdgeInsets.only(left: 2.w,right: 2.w),
       decoration: BoxDecoration(
         color: AppColors.cardBgColor,
         borderRadius: BorderRadius.circular(8),

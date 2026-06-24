@@ -1,18 +1,14 @@
 import 'package:bestvaluemotors/utils/appColors.dart';
 import 'package:bestvaluemotors/views/NotificationSettingsScreen.dart';
-import 'package:bestvaluemotors/views/confirmAutobidScreen.dart';
+import 'package:bestvaluemotors/views/productDetailScreen.dart';
 import 'package:bestvaluemotors/views/homeScreen.dart';
 import 'package:bestvaluemotors/views/liveAuctionScreen.dart';
 import 'package:bestvaluemotors/views/myProfileScreen.dart';
 import 'package:bestvaluemotors/views/myWatchListScreen.dart';
 import 'package:bestvaluemotors/views/paintScreen.dart';
-import 'package:bestvaluemotors/views/productDetailScreen.dart';
-import 'package:bestvaluemotors/views/productPhotosScreen.dart';
 import 'package:bestvaluemotors/views/purchasedFilterScreen.dart';
 import 'package:bestvaluemotors/views/purchasedScreen.dart';
-import 'package:bestvaluemotors/views/recentActivityScreen.dart';
 import 'package:bestvaluemotors/views/runListScreen.dart';
-import 'package:bestvaluemotors/views/setAutobidScreen.dart';
 import 'package:bestvaluemotors/views/tiresScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -40,6 +36,8 @@ class MyApp extends StatelessWidget {
           // home: MyWatchListScreen() ,
           // home: ProductDetailScreen() ,
           // home: HomeScreen() ,
+          // home: ConfirmAutoBidScreen() ,
+          home: HomeScreen() ,
           // home: ProductPhotosScreen() ,
           // home: MyProfileScreen() ,
           // home: ConfirmAutoBidScreen() ,
@@ -49,9 +47,13 @@ class MyApp extends StatelessWidget {
           // home: TiresScreen() ,
           // home: LiveAuctionScreen() ,
           // home: PurchasedFilterScreen() ,
-          home: NotificationSettingsScreen() ,
+          // home: SetAutoBidScreen() ,
+          // home: NotificationSettingsScreen() ,
           // home: PurchasedScreen() ,
           // home: RunListScreen() ,
+
+          // home: ConfirmAutoBidScreen() ,
+          // home: HomeScreen() ,
         );
       },
     );

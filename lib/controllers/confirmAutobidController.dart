@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_rx/src/rx_types/rx_types.dart';
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
 
 class ConfirmAutobidController extends GetxController{
@@ -23,4 +24,11 @@ class ConfirmAutobidController extends GetxController{
     Icons.event_seat_outlined,
     Icons.event_seat_outlined,
   ];
+
+  RxList<String> damageImages = <String>[
+    "assets/images/car.jpg",
+    "assets/images/car.jpg",
+    "assets/images/car.jpg",
+    "assets/images/car.jpg",
+  ].obs;
 }

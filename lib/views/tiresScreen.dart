@@ -23,7 +23,7 @@ class _TiresScreenState extends State<TiresScreen> {
 
   Widget body(){
     return Padding(
-      padding: EdgeInsets.only(left: 4.w, right: 4.w),
+      padding: EdgeInsets.only(left: 2.w, right: 2.w),
       child: Column(
         children: [
           SizedBox(height: 1.h),

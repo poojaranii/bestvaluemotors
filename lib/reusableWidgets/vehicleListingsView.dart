@@ -1,11 +1,8 @@
-import 'dart:math';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-
 import '../utils/appColors.dart';
 
-class NotificationCard extends StatelessWidget {
+class VehicleListingsView extends StatelessWidget {
   final String title;
   final String description;
   final IconData icon;
@@ -14,7 +11,7 @@ class NotificationCard extends StatelessWidget {
   final bool push;
   final bool email;
 
-  const NotificationCard({
+  const VehicleListingsView({
     super.key,
     required this.title,
     required this.description,

@@ -22,7 +22,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
 
   body(){
     return  Padding(
-      padding: EdgeInsets.only(left: 4.w, right: 4.w),
+      padding: EdgeInsets.only(left: 2.w, right: 2.w),
       child: Column(
         children: [
           SizedBox(height: 1.h),
@@ -43,6 +43,10 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                   SizedBox(height: 2.h),
                   profileView(),
                   SizedBox(height: 2.h),
+                  commonView1(
+                    AppStrings.changePassword
+                  ),
+                  SizedBox(height: 1.h),
                   emailMobileView(
                     AppStrings.email,
                     AppStrings.dummyEmail,
@@ -123,15 +127,11 @@ Widget profileView(){
               children: [
                 CircleAvatar(
                   backgroundColor: AppColors.orangeColor,
-                  radius: 45,
+                  radius: 35,
                   child: CircleAvatar(
-                    backgroundColor: AppColors.bgColor,
-                    radius: 43,
-                    child:CircleAvatar(
-                        backgroundColor: AppColors.cardBgColor,
-                        radius: 40,
-                        child: Icon(Icons.person,size: 55,)),
-                  ),
+                      backgroundColor: AppColors.cardBgColor,
+                      radius: 34,
+                      child: Icon(Icons.person,size: 50)),
                 ),
                 Positioned(
                   right: 1.w,
@@ -271,10 +271,22 @@ Widget emailMobileView(String title, String description, IconData iconName) {
                 ),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: AppColors.bgColor.withOpacity(0.4),
-                  border: Border.all(color: AppColors.orangeColor, width: 0.2),
+                  color: AppColors.cardBgColor,
+                  gradient:  LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      AppColors.orangeColor.withOpacity(0.20),
+                      AppColors.orangeColor.withOpacity(0.10),
+                      AppColors.orangeColor.withOpacity(0.08),
+                    ],
+                  ),
+                  border: Border.all(
+                    color: AppColors.orangeColor,
+                    width: 0.2,
+                  ),
                 ),
-                child: Icon(iconName, size: 22, color: AppColors.orangeColor),
+                child: Icon(iconName, size: 18, color: AppColors.orangeColor),
               ),
               SizedBox(width: 4.w),
               Column(
@@ -329,7 +341,63 @@ Widget emailMobileView(String title, String description, IconData iconName) {
       ),
     );
   }
-Widget commonView(String title, String description, IconData iconName,{bool? colorValue ,Color? color}) {
+  Widget commonView1(String title) {
+    return Container(
+      padding: EdgeInsets.only(left: 2.w, right: 2.w, top: 1.2.h, bottom: 1.2.h),
+      decoration: BoxDecoration(
+        color: AppColors.cardBgColor,
+        borderRadius: BorderRadius.circular(8),
+        //border: Border.all(color: AppColors.dividerColor, width: 1.2),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            children: [
+              Container(
+                padding: EdgeInsets.only(
+                  left: 2.w,
+                  right: 2.w,
+                  top: 1.5.h,
+                  bottom: 1.5.h,
+                ),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: AppColors.cardBgColor,
+                  gradient:  LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      AppColors.orangeColor.withOpacity(0.20),
+                      AppColors.orangeColor.withOpacity(0.10),
+                      AppColors.orangeColor.withOpacity(0.08),
+                    ],
+                  ),
+                  border: Border.all(
+                    color: AppColors.orangeColor,
+                    width: 0.2,
+                  ),
+                ),
+                child: Icon(Icons.lock_outline, size: 18, color: AppColors.orangeColor),
+              ),
+              SizedBox(width: 4.w),
+              Text(
+                title,
+                style: TextStyle(
+                  fontWeight: FontWeight.w400,
+                  fontSize: 10,
+                  color: AppColors.greyColor,
+                ),
+              ),
+            ],
+          ),
+          Icon(Icons.arrow_forward_ios_sharp,size: 18,)
+        ],
+      ),
+    );
+  }
+
+  Widget commonView(String title, String description, IconData iconName,{bool? colorValue ,Color? color}) {
     return Container(
       padding: EdgeInsets.only(left: 2.w, right: 2.w, top: 1.2.h, bottom: 1.2.h),
       decoration: BoxDecoration(
@@ -350,10 +418,22 @@ Widget commonView(String title, String description, IconData iconName,{bool? col
                 ),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  color: AppColors.bgColor.withOpacity(0.4),
-                  border: Border.all(color: AppColors.orangeColor, width: 0.2),
+                  color: AppColors.cardBgColor,
+                  gradient:  LinearGradient(
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    colors: [
+                      AppColors.orangeColor.withOpacity(0.20),
+                      AppColors.orangeColor.withOpacity(0.10),
+                      AppColors.orangeColor.withOpacity(0.08),
+                    ],
+                  ),
+                  border: Border.all(
+                    color: AppColors.orangeColor,
+                    width: 0.2,
+                  ),
                 ),
-                child: Icon(iconName, size: 22, color: AppColors.orangeColor),
+                child: Icon(iconName, size: 18, color: AppColors.orangeColor),
               ),
               SizedBox(width: 4.w),
               Column(
