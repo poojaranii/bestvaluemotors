@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
-
 import '../reusableWidgets/appBarView.dart';
 import '../utils/appColors.dart';
 import '../utils/appStrings.dart';

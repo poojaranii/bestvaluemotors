@@ -3,11 +3,8 @@ import 'package:bestvaluemotors/views/paintScreen.dart';
 import 'package:bestvaluemotors/views/tiresScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_instance/src/extension_instance.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 import 'package:sizer/sizer.dart';
-import '../controllers/confirmAutobidController.dart';
+import '../controllers/productDetailController.dart';
 import '../reusableWidgets/appBarView.dart';
 import '../reusableWidgets/dialogView.dart';
 import '../utils/appColors.dart';
@@ -22,7 +19,7 @@ class ProductDetailScreen extends StatefulWidget {
 }
 
 class _ProductDetailScreenState extends State<ProductDetailScreen> {
-  ConfirmAutobidController controller = Get.put(ConfirmAutobidController());
+  ProductDetailController controller = Get.put(ProductDetailController());
 
   @override
   Widget build(BuildContext context) {
@@ -88,7 +85,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                         width: 0.1.w,
                         color: AppColors.orangeColor,
                       ),
-                      Container(
+                      SizedBox(
                         width: 28.w,
                         child: Text(
                           AppStrings.soldByClutch,
@@ -227,7 +224,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                           SizedBox(width: 2.w),
                           GestureDetector(
                             onTap: (){
-                              shareVehicleDialog(context);
+                              showDropOffLocationDialog(context);
+                              // shareVehicleDialog(context);
                             },
                             child: Container(
                               padding: EdgeInsets.only(

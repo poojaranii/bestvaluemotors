@@ -1,3 +1,4 @@
+import 'package:bestvaluemotors/utils/appStrings.dart';
 import 'package:flutter/material.dart';
 import 'package:sizer/sizer.dart';
 
@@ -31,19 +32,19 @@ class _PurchasedFilterScreenState extends State<PurchasedFilterScreen> {
                   children: [
                     _search(),
                      SizedBox(height:2.h),
-                    _title("Saved Vehicle Filters"),
+                    _title(AppStrings.savedVehicleFilters),
                     SizedBox(height:1.h),
                     _dateCard(),
                     SizedBox(height:2.h),
-                    _title("Distance (KM)"),
+                    _title(AppStrings.distanceKm),
                     SizedBox(height:1.h),
                     _distance(),
                     SizedBox(height:2.h),
-                    _title("Vehicle Filters"),
+                    _title(AppStrings.vehicleFilters),
                     SizedBox(height:1.h),
                     _vehicleCard(),
                     SizedBox(height:2.h),
-                    _title("More"),
+                    _title(AppStrings.more),
                     SizedBox(height:1.h),
                     _moreCard(),
                     SizedBox(height:14.h),
@@ -51,9 +52,6 @@ class _PurchasedFilterScreenState extends State<PurchasedFilterScreen> {
                 ),
               ),
             ),
-
-            // _bottomButton()
-
           ],
         ),
       ),
@@ -62,7 +60,6 @@ class _PurchasedFilterScreenState extends State<PurchasedFilterScreen> {
 
 
   Widget _appBar(){
-
     return Padding(
       padding: EdgeInsets.only(left: 3.w,right: 3.w),
       child: Row(
@@ -80,7 +77,7 @@ class _PurchasedFilterScreenState extends State<PurchasedFilterScreen> {
           ),
           const Spacer(),
           Text(
-            "Purchased",
+            AppStrings.purchased,
             style:TextStyle(
                 color:AppColors.whiteColor,
                 fontSize:15,
@@ -127,7 +124,7 @@ class _PurchasedFilterScreenState extends State<PurchasedFilterScreen> {
 
           const Expanded(
             child:Text(
-              "Search All",
+              AppStrings.searchAll,
               style:TextStyle(
                   color:AppColors.greyColor,
                   fontSize:14
@@ -160,7 +157,7 @@ class _PurchasedFilterScreenState extends State<PurchasedFilterScreen> {
         children:[
 
           Expanded(
-              child:_dateItem("Date From")
+              child:_dateItem(AppStrings.dateFrom)
           ),
 
 
@@ -172,7 +169,7 @@ class _PurchasedFilterScreenState extends State<PurchasedFilterScreen> {
 
            SizedBox(width: 2.w,),
           Expanded(
-              child:_dateItem("Date To")
+              child:_dateItem(AppStrings.dateTo)
           )
 
         ],
@@ -216,7 +213,7 @@ class _PurchasedFilterScreenState extends State<PurchasedFilterScreen> {
 
 
             const Text(
-              "Any Date",
+              AppStrings.anyDate,
               style:TextStyle(
                   color:AppColors.whiteColor,
                   fontSize:15,
@@ -236,11 +233,6 @@ class _PurchasedFilterScreenState extends State<PurchasedFilterScreen> {
 
 
   Widget _distance(){
-
-    List data=[
-      "10","50","100","250","500","Any"
-    ];
-
     return   SizedBox(
       height: 6.h,
       child: ListView.separated(
@@ -258,7 +250,6 @@ class _PurchasedFilterScreenState extends State<PurchasedFilterScreen> {
                     color:AppColors.borderColor
                 )
             ),
-
             child:Text(
               "10",
               style:const TextStyle(
@@ -278,92 +269,64 @@ class _PurchasedFilterScreenState extends State<PurchasedFilterScreen> {
 
 
   Widget _vehicleCard(){
-
     return Container(
       padding:const EdgeInsets.all(18),
       decoration:_box(),
-
       child:Column(
         children:[
-
-
           Row(
             mainAxisAlignment:MainAxisAlignment.spaceBetween,
             children:[
-
               const Text(
-                "Mileage (KM)",
+                AppStrings.mileageKm,
                 style:TextStyle(
                     color:AppColors.greyColor,
                     fontSize:15
                 ),
               ),
-
               const Text(
-                "Any",
+                AppStrings.any,
                 style:TextStyle(
                     color:AppColors.whiteColor,
                     fontSize:15
                 ),
               )
-
             ],
           ),
-
           SizedBox(height:1.h),
-
           Slider(
             padding: EdgeInsets.zero,
             value:.5,
             onChanged:(v){},
             activeColor:AppColors.orangeColor,
           ),
-
           SizedBox(height:1.h),
-
           const Align(
             alignment:Alignment.centerLeft,
             child:Text(
-              "Year",
+              AppStrings.year,
               style:TextStyle(
                   color:AppColors.greyColor,
                   fontSize:15
               ),
             ),
           ),
-
-
           SizedBox(height:1.h),
-
-
           Row(
             children:[
-
               Expanded(
-                child:_field("From"),
+                child:_field(AppStrings.from),
               ),
-
               const SizedBox(width:15),
-
               Expanded(
-                child:_field("To"),
+                child:_field(AppStrings.to),
               )
-
             ],
           ),
-
-
           const SizedBox(height:12),
-
-
-          _field("Any Make"),
-
-
+          _field(AppStrings.anyMake),
           const SizedBox(height:12),
-
-
-          _field("No Model"),
-
+          _field(AppStrings.noModel),
         ],
       ),
     );
@@ -374,7 +337,6 @@ class _PurchasedFilterScreenState extends State<PurchasedFilterScreen> {
 
 
   Widget _field(String text){
-
     return Container(
       height:7.h,
       padding:EdgeInsets.symmetric(horizontal:3.w),
@@ -384,19 +346,14 @@ class _PurchasedFilterScreenState extends State<PurchasedFilterScreen> {
               color:AppColors.borderColor
           )
       ),
-
       child:Row(
         children:[
-
           const Icon(
             Icons.directions_car_outlined,
             color:AppColors.greyColor,
             size: 18,
           ),
-
           SizedBox(width:2.w),
-
-
           Expanded(
             child:Text(
               text,
@@ -406,14 +363,11 @@ class _PurchasedFilterScreenState extends State<PurchasedFilterScreen> {
               ),
             ),
           ),
-
-
           const Icon(
             Icons.keyboard_arrow_down,
             color:AppColors.greyColor,
             size: 18,
           )
-
         ],
       ),
     );
@@ -433,24 +387,24 @@ class _PurchasedFilterScreenState extends State<PurchasedFilterScreen> {
 
           _moreTile(
               Icons.gavel_outlined,
-              "Auction",
-              "Any Auction"
+              AppStrings.auction,
+              AppStrings.anyAuction
           ),
 
           _divider(),
 
           _moreTile(
               Icons.description_outlined,
-              "Format",
-              "Any Format"
+              AppStrings.format,
+              AppStrings.anyFormat
           ),
 
           _divider(),
 
           _moreTile(
               Icons.location_on_outlined,
-              "Location",
-              "Any Auction Location"
+              AppStrings.location,
+              AppStrings.anyAuctionLocation
           )
 
         ],
@@ -558,7 +512,7 @@ class _PurchasedFilterScreenState extends State<PurchasedFilterScreen> {
                 size: 18,
               ),
               const Text(
-              "Show 154 Results",
+              AppStrings.showResults,
               style:TextStyle(
                   fontSize:14
               ),

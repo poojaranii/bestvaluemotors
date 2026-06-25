@@ -74,7 +74,7 @@ class _PaintScreenState extends State<PaintScreen> {
                              ),
                              SizedBox(height: 0.6.h),
                              Text(
-                               "No",
+                               AppStrings.no,
                                style: TextStyle(
                                  fontWeight: FontWeight.w500,
                                  fontSize: 12,

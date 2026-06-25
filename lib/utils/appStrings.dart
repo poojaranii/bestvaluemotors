@@ -133,53 +133,86 @@ class AppStrings {
   static const String dummyVehicleDesc1 = "Edge 4dr Titanium AWD";
   static const String dummyVehicle2 = "2015 Ford";
   static const String dummyVehicleDesc2 = "Super Duty F-250 SRW 4WD SuperCab 158\" XLT";
-
   static const String title = "Paint";
-
   static const String vehicleRepainted = "Vehicle Repainted";
   static const String no = "No";
-
   static const String hoodDepth = "Hood Depth";
   static const String driverFender = "Driver Fender";
   static const String driverFrontDoor = "Driver Front Door";
   static const String driverRearDoor = "Driver Rear Door";
   static const String driverQuarterPanel = "Driver Quarter Panel";
   static const String trunk = "Trunk";
-
   static const String roofDepth = "Roof Depth";
   static const String passengerFender = "Passenger Fender";
   static const String passengerFrontDoor = "Passenger Front Door";
   static const String passengerRearDoor = "Passenger Rear Door";
   static const String passengerQuarterPanel = "Passenger Quarter Panel";
-
-
   static const String tpms = "TPMS";
   static const String aftermarketWheels = "Aftermarket Wheels";
-
   static const String winterTires = "Winter Tires";
   static const String studdedWinterTires = "Studded Winter Tires";
-
   static const String fourMatchingTires = "Four Matching Tires";
-
   static const String secondSetOfTires = "Second Set Of Tires";
   static const String withRims = "With Rims";
-
   static const String driverFrontTireBrand = "Driver Front Tire - Brand";
   static const String passengerFrontTireBrand = "Passenger Front Tire - Brand";
   static const String driverRearTireBrand = "Driver Rear Tire - Brand";
   static const String passengerRearTireBrand = "Passenger Rear Tire - Brand";
-
   static const String tireSize = "Tire Size";
   static const String tread = "Tread";
-
   static const String yes = "Yes";
   static const String unitsUpcoming = "Units Upcoming";
   static const String noLiveAuction = "No Live Auctions Running";
   static const String totalUnitsUpcoming = "Total Units Upcoming";
-
   static const String tireBrand = "BF Goodrich";
   static const String frontTireSize = "225 / 65 / 17";
   static const String frontDriverTread = "9 / 32";
   static const String asIsEasternAuction = "As is Eastern Canada Auction";
-
+  static const String shareVehicle = "Share Vehicle";
+  static const String shareVehicleListing = "Share Vehicle Listing";
+  static const String shareVehicleListingInstantly = "Share this vehicle instantly through email, SMS, or copy the link.";
+  static const String shareLink = "https://vehicleapp.com/share/vehicle123";
+  static const String copy = "Copy";
+  static const String shareViaEmail = "Share via Email";
+  static const String shareViaSms = "Share via SMS";
+  static const String moreShareOptions = "More Share Options";
+  static const String selectDropOffLocation = "Select Drop Off Location";
+  static const String selectLocation = "Select Location";
+  static const String newYork = "New York";
+  static const String pleaseVerifyTheSelected = "Please verify the selected location before continuing.";
+  static const String confirmLocation = "Confirm Location";
+  static const String selectCompany = "Select Company";
+  static const String bestValueMotors = "Bestvalue Motors Inc.";
+  static const String notifications = "Notifications";
+  static const String manageHowYouReceiveAlerts = "Manage how you receive alerts";
+  static const String vehicleListings = "Vehicle Listings";
+  static const String postSale = "Post Sale";
+  static const String staff = "Staff";
+  static const String watchlist = "Watchlist";
+  static const String youWillBeNotified = "You will be notified when a watched item is 10 cars away from going live";
+  static const String savedVehicleFilters = "Saved Vehicle Filters";
+  static const String distanceKm = "Distance (KM)";
+  static const String vehicleFilters = "Vehicle Filters";
+  static const String more = "More";
+  static const String dateFrom = "Date From";
+  static const String dateTo = "Date To";
+  static const String anyDate = "Any Date";
+  static const String mileageKm = "Mileage (KM)";
+  static const String any = "Any";
+  static const String from = "From";
+  static const String to = "To";
+  static const String anyMake = "Any Make";
+  static const String noModel = "No Model";
+  static const String anyAuction = "Any Auction";
+  static const String format = "Format";
+  static const String anyFormat = "Any Format";
+  static const String location = "Location";
+  static const String anyAuctionLocation = "Any Auction Location";
+  static const String showResults = "Show 154 Results";
+  static const String runNumber = "RUN NUMBER - LOW TO HIGH";
+  static const String all = "All";
+  static const String mine = "Mine";
+  static const String autobids = "Autobids";
+  static const String watching = "Watching";
+  static const String unreserved = "Unreserved";
 }

@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_instance/src/extension_instance.dart';
 import 'package:sizer/sizer.dart';
 import '../controllers/NotificationSettingsController.dart';
 import '../reusableWidgets/inAuctionView.dart';
 import '../reusableWidgets/vehicleListingsView.dart';
 import '../utils/appColors.dart';
+import '../utils/appStrings.dart';
 
 class NotificationSettingsScreen extends StatefulWidget {
   const NotificationSettingsScreen({super.key});
@@ -45,7 +44,7 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         Text(
-                          "Notifications",
+                          AppStrings.notifications,
                           style: TextStyle(
                             fontWeight: FontWeight.w500,
                             fontSize: 12,
@@ -54,7 +53,7 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
                         ),
                         SizedBox(height: 4),
                         Text(
-                          "Manage how you receive alerts",
+                          AppStrings.manageHowYouReceiveAlerts,
                           style: TextStyle(
                             color: AppColors.greyColor,
                             fontSize: 10,
@@ -79,7 +78,7 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
                   child: Row(
                     children: [
                       _tab(
-                        title: "Vehicle Listings",
+                        title: AppStrings.vehicleListings,
                         icon: Icons.directions_car_outlined,
                         selected: controller.selectedTab.value == 0,
                         onTap: () {
@@ -87,7 +86,7 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
                         },
                       ),
                       _tab(
-                        title: "Auction",
+                        title: AppStrings.auction,
                         icon: Icons.gavel_outlined,
                         selected: controller.selectedTab.value == 1,
                         onTap: () {
@@ -95,7 +94,7 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
                         },
                       ),
                       _tab(
-                        title: "Post Sale",
+                        title: AppStrings.postSale,
                         icon: Icons.sell_outlined,
                         selected: controller.selectedTab.value == 2,
                         onTap: () {
@@ -103,7 +102,7 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
                         },
                       ),
                       _tab(
-                        title: "Staff",
+                        title: AppStrings.staff,
                         icon: Icons.people_outline,
                         selected: controller.selectedTab.value == 3,
                         onTap: () {
@@ -123,10 +122,10 @@ class _NotificationSettingsScreenState extends State<NotificationSettingsScreen>
                     itemCount: 4,
                     itemBuilder: (context, index) {
                       return   VehicleListingsView(
-                        title: "Watchlist",
+                        title: AppStrings.watchlist,
                         icon: Icons.remove_red_eye_outlined,
                         description:
-                        "You will be notified when a watched item is 10 cars away from going live",
+                        AppStrings.youWillBeNotified,
                         sms: true,
                         push: true,
                         email: false,

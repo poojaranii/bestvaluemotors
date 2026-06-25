@@ -1,15 +1,7 @@
 import 'package:bestvaluemotors/utils/appColors.dart';
-import 'package:bestvaluemotors/views/NotificationSettingsScreen.dart';
 import 'package:bestvaluemotors/views/productDetailScreen.dart';
-import 'package:bestvaluemotors/views/homeScreen.dart';
-import 'package:bestvaluemotors/views/liveAuctionScreen.dart';
-import 'package:bestvaluemotors/views/myProfileScreen.dart';
-import 'package:bestvaluemotors/views/myWatchListScreen.dart';
-import 'package:bestvaluemotors/views/paintScreen.dart';
-import 'package:bestvaluemotors/views/purchasedFilterScreen.dart';
 import 'package:bestvaluemotors/views/purchasedScreen.dart';
 import 'package:bestvaluemotors/views/runListScreen.dart';
-import 'package:bestvaluemotors/views/tiresScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:sizer/sizer.dart';
@@ -26,34 +18,13 @@ class MyApp extends StatelessWidget {
       builder: (context, orientation, deviceType) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          title: 'Best Auction',
           theme: ThemeData(
             brightness: Brightness.dark,
             scaffoldBackgroundColor: AppColors.bgColor,
             canvasColor: AppColors.bgColor,
             fontFamily: 'Poppins',
           ),
-          // home: MyWatchListScreen() ,
-          // home: ProductDetailScreen() ,
-          // home: HomeScreen() ,
-          // home: ConfirmAutoBidScreen() ,
-          home: HomeScreen() ,
-          // home: ProductPhotosScreen() ,
-          // home: MyProfileScreen() ,
-          // home: ConfirmAutoBidScreen() ,
-          // home: RecentActivityScreen() ,
-          // home: SetAutoBidScreen() ,
-          // home: PaintScreen() ,
-          // home: TiresScreen() ,
-          // home: LiveAuctionScreen() ,
-          // home: PurchasedFilterScreen() ,
-          // home: SetAutoBidScreen() ,
-          // home: NotificationSettingsScreen() ,
-          // home: PurchasedScreen() ,
-          // home: RunListScreen() ,
-
-          // home: ConfirmAutoBidScreen() ,
-          // home: HomeScreen() ,
+          home: RunListScreen(),
         );
       },
     );

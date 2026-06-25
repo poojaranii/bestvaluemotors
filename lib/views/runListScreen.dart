@@ -75,7 +75,7 @@ class _RunListScreenState extends State<RunListScreen> {
         Column(
           children: const [
             Text(
-              'Run List',
+              AppStrings.runList,
               style: TextStyle(
                 fontWeight: FontWeight.w500,
                 fontSize: 12,
@@ -84,7 +84,7 @@ class _RunListScreenState extends State<RunListScreen> {
             ),
             SizedBox(height: 4),
             Text(
-              'RUN NUMBER - LOW TO HIGH',
+              AppStrings.runNumber,
               style: TextStyle(
                 color: AppColors.greyColor,
                 fontSize: 10
@@ -118,7 +118,7 @@ class _RunListScreenState extends State<RunListScreen> {
               Icon(Icons.search, color: AppColors.greyColor,size: 18),
               SizedBox(width: 2.w),
               Text(
-                'Search All',
+                AppStrings.searchAll,
                 style: TextStyle(
                   color: AppColors.greyColor,
                   fontSize: 14,
@@ -135,11 +135,11 @@ class _RunListScreenState extends State<RunListScreen> {
   // ---------------- VEHICLE CARD ----------------
   Widget tabsView() {
     final tabs = [
-      {"icon": Icons.layers, "count": "17,57", "title": "All"},
-      {"icon": Icons.person_2_outlined, "count": "0", "title": "Mine"},
-      {"icon": Icons.gavel_outlined, "count": "0", "title": "Autobids"},
-      {"icon": Icons.remove_red_eye_outlined, "count": "1", "title": "Watching"},
-      {"icon": Icons.bookmark_border, "count": "5", "title": "Unreserved"},
+      {"icon": Icons.layers, "count": "17,57", "title": AppStrings.all},
+      {"icon": Icons.person_2_outlined, "count": "0", "title": AppStrings.mine},
+      {"icon": Icons.gavel_outlined, "count": "0", "title": AppStrings.autobids},
+      {"icon": Icons.remove_red_eye_outlined, "count": "1", "title": AppStrings.watching},
+      {"icon": Icons.bookmark_border, "count": "5", "title": AppStrings.unreserved},
     ];
 
     return Container(

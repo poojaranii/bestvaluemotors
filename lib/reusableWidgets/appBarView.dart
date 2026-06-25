@@ -164,7 +164,7 @@ Widget commonAppBarView() {
   );
 }
 
-Widget commonAppBarView1(String title, {bool? iconTrue}) {
+Widget commonAppBarView1(String title, {bool? iconTrue,bool? menuTrue}) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.spaceBetween,
     children: [
@@ -185,6 +185,7 @@ Widget commonAppBarView1(String title, {bool? iconTrue}) {
         ),
       ),
       Row(
+        mainAxisAlignment: .spaceBetween,
         children: [
           Text(
             title,
@@ -197,7 +198,11 @@ Widget commonAppBarView1(String title, {bool? iconTrue}) {
           if(iconTrue??false)
             SizedBox(width: 2.w),
           if(iconTrue??false)
-           Icon(Icons.info_outlined,size: 18)
+           Icon(Icons.info_outlined,size: 18),
+            if(menuTrue??false)
+            const Icon(
+                Icons.tune,
+                color: AppColors.orangeColor, size: 18),
         ],
       ),
       Icon(Icons.eighteen_mp, color: AppColors.bgColor),
