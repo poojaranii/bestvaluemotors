@@ -1,4 +1,5 @@
 import 'package:bestvaluemotors/utils/appColors.dart';
+import 'package:bestvaluemotors/views/homeScreen.dart';
 import 'package:bestvaluemotors/views/productDetailScreen.dart';
 import 'package:bestvaluemotors/views/purchasedScreen.dart';
 import 'package:bestvaluemotors/views/runListScreen.dart';
@@ -24,7 +25,8 @@ class MyApp extends StatelessWidget {
             canvasColor: AppColors.bgColor,
             fontFamily: 'Poppins',
           ),
-          home: RunListScreen(),
+          // home: RunListScreen(),
+          home: HomeScreen(),
         );
       },
     );

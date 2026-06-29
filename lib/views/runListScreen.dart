@@ -1,6 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:sizer/sizer.dart';
 
 import '../utils/appColors.dart';
@@ -61,16 +63,21 @@ class _RunListScreenState extends State<RunListScreen> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Container(
-          width: 9.w,
-          height: 9.w,
-          decoration: BoxDecoration(
-            color: AppColors.bgColor,
-            borderRadius: BorderRadius.circular(4),
-            border: Border.all(color: AppColors.orangeColor, width: 1.2),
+        GestureDetector(
+          onTap: (){
+            Get.back();
+          },
+          child: Container(
+            width: 9.w,
+            height: 9.w,
+            decoration: BoxDecoration(
+              color: AppColors.bgColor,
+              borderRadius: BorderRadius.circular(4),
+              border: Border.all(color: AppColors.orangeColor, width: 1.2),
+            ),
+            alignment: Alignment.center,
+            child: Icon(Icons.arrow_back, color: AppColors.orangeColor, size: 18),
           ),
-          alignment: Alignment.center,
-          child: Icon(Icons.arrow_back, color: AppColors.orangeColor, size: 18),
         ),
         Column(
           children: const [
@@ -284,28 +291,28 @@ class _RunListScreenState extends State<RunListScreen> {
                       child: Row(
                         children: [
                           CircleAvatar(
-                            backgroundColor: AppColors.darkGreen,
+                            backgroundColor: AppColors.redColor,
                             radius: 8,
                             child: Text(
-                              "G",
+                              "R",
                               style: TextStyle(
                                 fontWeight: FontWeight.w800,
                                 fontSize: 8,
                               ),
                             ),
                           ),
-                          SizedBox(width: 1.w),
-                          CircleAvatar(
-                            backgroundColor: AppColors.yellow,
-                            radius: 8,
-                            child: Text(
-                              "Y",
-                              style: TextStyle(
-                                fontWeight: FontWeight.w800,
-                                fontSize: 8,
-                              ),
-                            ),
-                          ),
+                          // SizedBox(width: 1.w),
+                          // CircleAvatar(
+                          //   backgroundColor: AppColors.yellow,
+                          //   radius: 8,
+                          //   child: Text(
+                          //     "Y",
+                          //     style: TextStyle(
+                          //       fontWeight: FontWeight.w800,
+                          //       fontSize: 8,
+                          //     ),
+                          //   ),
+                          // ),
                         ],
                       ),
                     ),)

@@ -1,7 +1,10 @@
 import 'package:bestvaluemotors/reusableWidgets/imageView.dart';
 import 'package:bestvaluemotors/utils/appColors.dart';
 import 'package:bestvaluemotors/utils/appStrings.dart';
+import 'package:bestvaluemotors/views/liveAuctionScreen.dart';
 import 'package:bestvaluemotors/views/productDetailScreen.dart';
+import 'package:bestvaluemotors/views/purchasedScreen.dart';
+import 'package:bestvaluemotors/views/runListScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -47,10 +50,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 crossAxisAlignment: .start,
                 children: [
                   commonView(AppStrings.browse,Icons.dashboard_outlined),
+                  // SizedBox(height: 1.h),
+                  /*commonView(AppStrings.myBlock,Icons.directions_car_outlined),
                   SizedBox(height: 1.h),
-                  commonView(AppStrings.myBlock,Icons.directions_car_outlined),
-                  SizedBox(height: 1.h),
-                  commonView(AppStrings.myMarketGuide,Icons.auto_graph_sharp),
+                  commonView(AppStrings.myMarketGuide,Icons.auto_graph_sharp),*/
                   SizedBox(height: 1.5.h),
                   cardView(),
                   SizedBox(height: 2.h),
@@ -73,7 +76,9 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
                   SizedBox(height: 2.h),
-                  commonView3(AppStrings.dummyNumber,AppStrings.purchased,Icons.shopping_cart_outlined),
+                  Text(AppStrings.finished,style: TextStyle(fontWeight: FontWeight.w400,fontSize: 15,color: AppColors.whiteColor),),
+                  SizedBox(height: 1.h),
+                  commonView3(AppStrings.dummyNumber,AppStrings.purchased,Icons.shopping_cart_outlined,onTap: (){Get.to(PurchasedScreen());}),
                   SizedBox(height: 1.h),
                   commonView3("3",AppStrings.noSale,Icons.sell_outlined),
                   SizedBox(height: 2.h),
@@ -164,7 +169,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
    }
-   Widget commonView1(String title,String description,IconData iconName){
+   Widget commonView1(String title,String description,IconData iconName,{VoidCallback? onTap}){
     return  Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -202,7 +207,9 @@ class _HomeScreenState extends State<HomeScreen> {
             )
           ],
         ),
-        Icon(Icons.arrow_forward_ios_sharp,size: 15)
+        GestureDetector(
+          onTap: onTap,
+            child: Icon(Icons.arrow_forward_ios_sharp,size: 15))
       ],
     );
    }
@@ -221,23 +228,23 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          commonView1(AppStrings.dummyNumber,AppStrings.swipeNewUnits,Icons.layers_outlined),
+          // commonView1(AppStrings.dummyNumber,AppStrings.swipeNewUnits,Icons.layers_outlined),
+          // SizedBox(height: 1.5.h),
+          // Container(color: AppColors.dividerColor,width: 100.w,height: 0.1.h),
+          // SizedBox(height: 1.5.h),
+          // commonView1(AppStrings.purchasedCount,AppStrings.timedAuction,Icons.gavel_outlined),
+          // SizedBox(height: 1.5.h),
+          // Container(color: AppColors.dividerColor,width: 100.w,height: 0.1.h),
+          // SizedBox(height: 1.5.h),
+          commonView1(AppStrings.dummyYear,AppStrings.runList,Icons.article_outlined,onTap: (){Get.to(RunListScreen());}),
           SizedBox(height: 1.5.h),
           Container(color: AppColors.dividerColor,width: 100.w,height: 0.1.h),
           SizedBox(height: 1.5.h),
-          commonView1(AppStrings.purchasedCount,AppStrings.timedAuction,Icons.gavel_outlined),
-          SizedBox(height: 1.5.h),
-          Container(color: AppColors.dividerColor,width: 100.w,height: 0.1.h),
-          SizedBox(height: 1.5.h),
-          commonView1(AppStrings.dummyYear,AppStrings.runList,Icons.article_outlined),
-          SizedBox(height: 1.5.h),
-          Container(color: AppColors.dividerColor,width: 100.w,height: 0.1.h),
-          SizedBox(height: 1.5.h),
-          commonView1(AppStrings.dummyDate,AppStrings.liveAuction,Icons.podcasts_outlined),
-          SizedBox(height: 1.5.h),
-          Container(color: AppColors.dividerColor,width: 100.w,height: 0.1.h),
-          SizedBox(height: 1.5.h),
-          commonView1(AppStrings.purchasedCount,AppStrings.buyNow,Icons.shopping_cart_outlined),
+          commonView1(AppStrings.dummyDate,AppStrings.liveAuction,Icons.podcasts_outlined,onTap: (){Get.to(LiveAuctionScreen());}),
+          // SizedBox(height: 1.5.h),
+          // Container(color: AppColors.dividerColor,width: 100.w,height: 0.1.h),
+          // SizedBox(height: 1.5.h),
+          // commonView1(AppStrings.purchasedCount,AppStrings.buyNow,Icons.shopping_cart_outlined),
         ],
       ),
     );
@@ -373,7 +380,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
     );
   }
-   Widget commonView3(String title,String description,IconData iconName){
+   Widget commonView3(String title,String description,IconData iconName,{VoidCallback? onTap}){
     return Container(
       width: 100.w,
       padding: EdgeInsets.only(left: 3.w,right: 3.w,top: 1.3.h,bottom: 1.3.h),
@@ -422,7 +429,9 @@ class _HomeScreenState extends State<HomeScreen> {
               )
             ],
           ),
-          Icon(Icons.arrow_forward_ios_sharp,size: 15,color: AppColors.whiteColor)
+          GestureDetector(
+              onTap: onTap,
+              child: Icon(Icons.arrow_forward_ios_sharp,size: 15,color: AppColors.whiteColor))
         ],
       ),
     );

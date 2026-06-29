@@ -1,3 +1,4 @@
+import 'package:bestvaluemotors/views/purchasedFilterScreen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/src/extension_instance.dart';
@@ -90,7 +91,11 @@ class _PurchasedScreenState extends State<PurchasedScreen> {
             Icon(Icons.info_outlined, size: 18),
           ],
         ),
-        const Icon(Icons.tune, color: AppColors.orangeColor, size: 18),
+    GestureDetector(
+    onTap: () {
+    Get.to(PurchasedFilterScreen());
+    },
+    child: const Icon(Icons.tune, color: AppColors.orangeColor, size: 18)),
 
       ],
     );
@@ -157,28 +162,23 @@ class _PurchasedScreenState extends State<PurchasedScreen> {
                       ),
                     ),
                   ),
+                if (item["lane"].toString().isNotEmpty)
                 SizedBox(width: 2.w),
-                ...item["badges"].map<Widget>(
-                  (badge) => Container(
-                    margin: EdgeInsets.only(right: 2.w),
-                    width: 5.w,
-                    height: 5.w,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: badge == "G"
-                          ? AppColors.darkGreen
-                          : badge == "Y"
-                          ? AppColors.yellow
-                          : Colors.red,
-                    ),
-                    child: Center(
-                      child: Text(
-                        badge,
-                        style: const TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 8,
-                        ),
+                Container(
+                  margin: EdgeInsets.only(right: 2.w),
+                  width: 5.w,
+                  height: 5.w,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: AppColors.redColor,
+                  ),
+                  child: Center(
+                    child: Text(
+                      "R",
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 8,
                       ),
                     ),
                   ),
@@ -256,11 +256,16 @@ class _PurchasedScreenState extends State<PurchasedScreen> {
                             CircleAvatar(
                               backgroundColor: AppColors.yellow,
                               radius: 9,
-                              child: Text(
-                                "A",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w800,
-                                  fontSize: 8,
+                              child: CircleAvatar(
+                                backgroundColor: AppColors.cardBgColor,
+                                radius: 8,
+                                child: Text(
+                                  "A",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w800,
+                                    color:  AppColors.yellow,
+                                    fontSize: 8,
+                                  ),
                                 ),
                               ),
                             ),
@@ -268,11 +273,16 @@ class _PurchasedScreenState extends State<PurchasedScreen> {
                             CircleAvatar(
                               backgroundColor: AppColors.darkGreen,
                               radius: 9,
-                              child: Text(
-                                "V",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w800,
-                                  fontSize: 8,
+                              child:  CircleAvatar(
+                                backgroundColor: AppColors.cardBgColor,
+                                radius: 8,
+                                child: Text(
+                                  "V",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: 8,
+                                    color: AppColors.darkGreen,
+                                  ),
                                 ),
                               ),
                             ),
@@ -284,12 +294,12 @@ class _PurchasedScreenState extends State<PurchasedScreen> {
                               ),
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(4),
-                                border: Border.all(color: AppColors.green),
+                                border: Border.all(color: AppColors.whiteColor),
                               ),
                               child: Text(
                                 "74",
                                 style: const TextStyle(
-                                  color: AppColors.green,
+                                  color: AppColors.whiteColor,
                                   fontWeight: FontWeight.bold,
                                   fontSize: 11,
                                 ),
@@ -312,22 +322,22 @@ class _PurchasedScreenState extends State<PurchasedScreen> {
               ],
             ),
           ),
-          Divider(color: AppColors.dividerColor, height: 1),
-          SizedBox(height: 0.8.h),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: Padding(
-              padding: EdgeInsets.only(left: 3.w),
-              child: Text(
-                item["auction"],
-                style: const TextStyle(
-                  color: AppColors.greyColor,
-                  fontSize: 12,
-                ),
-              ),
-            ),
-          ),
-          SizedBox(height: 0.8.h),
+          // Divider(color: AppColors.dividerColor, height: 1),
+          // SizedBox(height: 0.8.h),
+          // Align(
+          //   alignment: Alignment.centerLeft,
+          //   child: Padding(
+          //     padding: EdgeInsets.only(left: 3.w),
+          //     child: Text(
+          //       item["auction"],
+          //       style: const TextStyle(
+          //         color: AppColors.greyColor,
+          //         fontSize: 12,
+          //       ),
+          //     ),
+          //   ),
+          // ),
+          // SizedBox(height: 0.8.h),
           Container(
             width: double.infinity,
             padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 1.5.h),

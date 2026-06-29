@@ -215,4 +215,5 @@ class AppStrings {
   static const String autobids = "Autobids";
   static const String watching = "Watching";
   static const String unreserved = "Unreserved";
+  static const String finished = "Finished";
 }

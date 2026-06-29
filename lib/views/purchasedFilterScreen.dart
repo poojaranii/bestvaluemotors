@@ -1,5 +1,7 @@
 import 'package:bestvaluemotors/utils/appStrings.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:sizer/sizer.dart';
 
 import '../utils/appColors.dart';
@@ -64,16 +66,21 @@ class _PurchasedFilterScreenState extends State<PurchasedFilterScreen> {
       padding: EdgeInsets.only(left: 3.w,right: 3.w),
       child: Row(
         children: [
-          Container(
-            width: 9.w,
-            height: 9.w,
-            decoration: BoxDecoration(
-              color: AppColors.bgColor,
-              borderRadius: BorderRadius.circular(4),
-              border: Border.all(color: AppColors.orangeColor, width: 1.2),
+          GestureDetector(
+            onTap: () {
+              Get.back();
+            },
+            child: Container(
+              width: 9.w,
+              height: 9.w,
+              decoration: BoxDecoration(
+                color: AppColors.bgColor,
+                borderRadius: BorderRadius.circular(4),
+                border: Border.all(color: AppColors.orangeColor, width: 1.2),
+              ),
+              alignment: Alignment.center,
+              child: Icon(Icons.arrow_back, color: AppColors.orangeColor, size: 18),
             ),
-            alignment: Alignment.center,
-            child: Icon(Icons.arrow_back, color: AppColors.orangeColor, size: 18),
           ),
           const Spacer(),
           Text(

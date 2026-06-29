@@ -60,7 +60,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                   Container(height: 0.1.h, width: 100.w, color: AppColors.greyColor),
                   SizedBox(height: 1.h),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       Row(
                         children: [
@@ -80,23 +80,23 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                           ),
                         ],
                       ),
-                      Container(
-                        height: 3.h,
-                        width: 0.1.w,
-                        color: AppColors.orangeColor,
-                      ),
-                      SizedBox(
-                        width: 28.w,
-                        child: Text(
-                          AppStrings.soldByClutch,
-                          overflow: TextOverflow.ellipsis,
-                          style: TextStyle(
-                            fontWeight: FontWeight.w400,
-                            fontSize: 12,
-                            color: AppColors.greyColor,
-                          ),
-                        ),
-                      ),
+                      // Container(
+                      //   height: 3.h,
+                      //   width: 0.1.w,
+                      //   color: AppColors.orangeColor,
+                      // ),
+                      // SizedBox(
+                      //   width: 28.w,
+                      //   child: Text(
+                      //     AppStrings.soldByClutch,
+                      //     overflow: TextOverflow.ellipsis,
+                      //     style: TextStyle(
+                      //       fontWeight: FontWeight.w400,
+                      //       fontSize: 12,
+                      //       color: AppColors.greyColor,
+                      //     ),
+                      //   ),
+                      // ),
                     ],
                   ),
                   SizedBox(height: 1.h),
@@ -149,28 +149,28 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                             child: Row(
                               children: [
                                 CircleAvatar(
-                                  backgroundColor: AppColors.darkGreen,
+                                  backgroundColor: AppColors.redColor,
                                   radius: 10,
                                   child: Text(
-                                    "G",
+                                    "R",
                                     style: TextStyle(
                                       fontWeight: FontWeight.w800,
                                       fontSize: 10,
                                     ),
                                   ),
                                 ),
-                                SizedBox(width: 2.w),
-                                CircleAvatar(
-                                  backgroundColor: AppColors.yellow,
-                                  radius: 10,
-                                  child: Text(
-                                    "Y",
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.w800,
-                                      fontSize: 10,
-                                    ),
-                                  ),
-                                ),
+                                // SizedBox(width: 2.w),
+                                // CircleAvatar(
+                                //   backgroundColor: AppColors.yellow,
+                                //   radius: 10,
+                                //   child: Text(
+                                //     "Y",
+                                //     style: TextStyle(
+                                //       fontWeight: FontWeight.w800,
+                                //       fontSize: 10,
+                                //     ),
+                                //   ),
+                                // ),
                               ],
                             ),
                           ),
@@ -224,8 +224,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                           SizedBox(width: 2.w),
                           GestureDetector(
                             onTap: (){
-                              showDropOffLocationDialog(context);
-                              // shareVehicleDialog(context);
+                              // showDropOffLocationDialog(context);
+                              shareVehicleDialog(context);
                             },
                             child: Container(
                               padding: EdgeInsets.only(
@@ -295,8 +295,8 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
                   SizedBox(height: 1.h,),
                   myAutobidView(),
                   SizedBox(height: 1.h,),
-                  auctionView(AppStrings.auction, AppStrings.easternCanadaAuction, Icons.gavel_outlined),
-                  SizedBox(height: 1.h,),
+                  // auctionView(AppStrings.auction, AppStrings.easternCanadaAuction, Icons.gavel_outlined),
+                  // SizedBox(height: 1.h,),
                   transportAuctionLocationView(AppStrings.transportEstimate, Icons.fire_truck_outlined),
                   SizedBox(height: 1.h,),
                   transportAuctionLocationView(AppStrings.auctionLocation, Icons.location_on_outlined),
